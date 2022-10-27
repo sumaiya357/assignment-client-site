@@ -46,7 +46,14 @@ import Register from '../pages/Register/Register';
         },
 
 
-        ]
+        ],
+        
+    },
+    {
+        path:'/*',
+        element:<div>Page Not Found</div>
     }
+
+    
   ])
 
