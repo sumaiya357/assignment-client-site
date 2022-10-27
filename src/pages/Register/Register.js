@@ -50,10 +50,12 @@ const Register = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" name='password' required placeholder="Password" />
       </Form.Group>
-      
+    
+    
       <Button className='mb-2 me-3' variant="primary" type="submit">
         Register
       </Button>
+
       <span>Already have a account? <Link className='text-decoration-none' to='/login'>Login</Link></span><br></br>
       
     
