@@ -15,7 +15,11 @@ import Register from '../pages/Register/Register';
         element:<Main></Main>,
         children:[
             {path:'/',
+            loader:()=>{
+                return fetch('http://localhost:5000/data')  
+            },
             element:<Home></Home>
+
         },
         {
             path:'/courses',

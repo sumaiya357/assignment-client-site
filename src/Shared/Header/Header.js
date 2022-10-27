@@ -43,14 +43,15 @@ const Header = () => {
             <p className='text-white'>
                 {user?.photoURL?
                 <Image
-                src={user?.photoURL}>
+                src={user?.photoURL}
+                width='30px'>
 
                 </Image>
                 :
                 <FaUserAlt></FaUserAlt>
             }
             </p>
-            <p className='text-white me-3'>
+            <p className='ms-2 text-white me-3'>
                 {
                     user?.displayName && <span>{user.displayName}</span>
                 }
