@@ -1,29 +1,16 @@
-import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
+
+import React from 'react';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../Context/AuthProvider';
 
 
 const Register = () => {
 
-  const googleProvider = new GoogleAuthProvider();
-  const gitProvider = new GithubAuthProvider();
-  const {signIn,createUser,signInWithGit} = useContext(AuthContext)
+
    
-  const handleGoogle =() =>{
-    signIn(googleProvider)
-  }
-  const handleGitHub =() =>{
-    signInWithGit(gitProvider)
-    .then(result =>{
-      const user = result.user;
-      console.log(user)
-    })
-    .catch(error => console.error(error))
-  }
+ 
 
   
 
@@ -36,13 +23,6 @@ const Register = () => {
     console.log(name,email,password)
     form.reset()
 
-  // ----- SignIn With Email Password ----
-      createUser(email,password)
-      .then(result => {
-        const user = result.user
-        console.log(user);
-      })
-    .catch(error => console.error(error))
   } 
 
     return (
@@ -74,9 +54,8 @@ const Register = () => {
       <Button className='mb-2 me-3' variant="primary" type="submit">
         Register
       </Button>
-      <span>Already have a account? <Link className='text-decoration-none' to='/register'>Login</Link></span><br></br>
-      <Button onClick={handleGoogle} variant="outline-success" className='mb-2'>Signin With Google</Button><br></br>
-      <Button onClick={handleGitHub} variant="outline-primary">Signin With GitHub</Button>
+      <span>Already have a account? <Link className='text-decoration-none' to='/login'>Login</Link></span><br></br>
+      
     
     </Form>
            
