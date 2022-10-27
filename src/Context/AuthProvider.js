@@ -21,6 +21,7 @@ const AuthProvider = ({children}) => {
     const createUser = (email,password) =>{
         return createUserWithEmailAndPassword(auth,email,password)
     }
+
     const authInfo ={signIn,createUser,signInWithGit}
     return (
         <div>
@@ -28,6 +29,8 @@ const AuthProvider = ({children}) => {
                {children}
             </AuthContext.Provider>
         </div>
+
+    
     );
 };
 
