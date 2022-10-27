@@ -1,11 +1,16 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
-const CourseDetails = ({data}) => {
+const CourseDetails2 =({data}) => {
     const {title,picture,_id} =data;
-    console.log(data)
     return (
+        <div>
+        <div>
+        <Container>
+     
         <div className='m-5 d-flex justify-content-center align-items-center'>
            <Card style={{ width: '22rem' }}>
       <Card.Img variant="top" src={picture} />
@@ -19,7 +24,13 @@ const CourseDetails = ({data}) => {
       </Card.Body>
     </Card>
         </div>
+       
+       
+      </Container>
+        </div>
+        </div>
+       
     );
 };
 
-export default CourseDetails;
+export default CourseDetails2;
