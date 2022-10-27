@@ -14,6 +14,7 @@ import { Image } from 'react-bootstrap';
 const Header = () => {
     
   const {user} = useContext(AuthContext);
+  console.log('context',user)
     return (
        
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -39,7 +40,7 @@ const Header = () => {
             <Link  className='text-decoration-none text-white me-3' to='/blog'>Blog</Link>
             </Nav>
         <Nav  >
-            <p>
+            <p className='text-white'>
                 {user?.photoURL?
                 <Image
                 src={user?.photoURL}>
