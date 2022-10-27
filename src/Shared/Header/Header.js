@@ -25,17 +25,15 @@ const Header = () => {
             />
           </Navbar.Brand>
         
-        <Navbar.Brand href="#home">The Course School </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link href="#pricing">Courses</Nav.Link>
-            <Nav.Link href="#pricing">FAQ</Nav.Link>
-            <Nav.Link href="#pricing">Blog</Nav.Link>
-        
-            
-          </Nav>
+         <Navbar.Brand href="#home">The Course School </Navbar.Brand>
+         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+         <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto ">
+            <Link  className='text-decoration-none text-white me-3' to='/'>Home</Link>
+            <Link  className='text-decoration-none text-white me-3' to='/courses'>Courses</Link>
+            <Link  className='text-decoration-none text-white me-3' to='/FAQ'>FAQ</Link>
+            <Link  className='text-decoration-none text-white me-3' to='/blog'>Blog</Link>
+            </Nav>
         <Nav  >
             <Link className='text-decoration-none text-white me-3' to='/login'>Login</Link>
             <Link className='text-decoration-none text-white' to='/register'>Register</Link>
