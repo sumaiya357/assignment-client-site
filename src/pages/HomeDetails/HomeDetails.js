@@ -2,11 +2,13 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
-const CourseDetails = ({data}) => {
+const HomeDetails =({data}) => {
     const {title,picture,_id} =data;
     console.log(data)
     return (
-        <div className='m-5 d-flex justify-content-center align-items-center'>
+        <div >
+           
+           <div className='m-5 d-flex justify-content-center align-items-center'>
            <Card style={{ width: '22rem' }}>
       <Card.Img variant="top" src={picture} />
       <Card.Body>
@@ -18,8 +20,12 @@ const CourseDetails = ({data}) => {
         <Button variant="primary">Enroll Now</Button>
       </Card.Body>
     </Card>
+           </div>
+
+          
         </div>
     );
 };
 
-export default CourseDetails;
+
+export default HomeDetails;

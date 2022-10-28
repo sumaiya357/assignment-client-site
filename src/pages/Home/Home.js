@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import CourseDetails from '../CourseDetails/CourseDetails';
+import HomeDetails from '../HomeDetails/HomeDetails';
 
 const Home = () => {
     const alldata = useLoaderData()
@@ -9,11 +9,11 @@ const Home = () => {
         <div>
             <h2>Home:{alldata.length}</h2>
             {
-                alldata.map(data => <CourseDetails
+                alldata.map(data => <HomeDetails
                 key={data.id}
                 data={data}>
 
-                </CourseDetails>)
+                </HomeDetails>)
             }
         </div>
     );

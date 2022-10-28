@@ -7,6 +7,7 @@ import FAQ from '../pages/FAQ/FAQ';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
+import RightNavDetails from '../pages/RightNavDetails/RightNavDetails';
 
 
   export  const route= createBrowserRouter([
@@ -24,7 +25,7 @@ import Register from '../pages/Register/Register';
         {
             path:'/courses',
             loader:()=>{
-                return fetch('http://localhost:5000/data')  
+                return fetch(`http://localhost:5000/data`)  
             },
             element:<Courses></Courses>
         },
@@ -46,13 +47,25 @@ import Register from '../pages/Register/Register';
         },
 
 
+        {
+            path:'/category/:id',
+            element:<RightNavDetails></RightNavDetails>,
+            loader:({params}) =>{
+                console.log(params)
+               return fetch(`http://localhost:5000/category/${params.id}`)
+            }
+           
+        },
+
         ],
         
     },
+  
     {
         path:'/*',
         element:<div>Page Not Found</div>
-    }
+    },
+   
 
     
   ])

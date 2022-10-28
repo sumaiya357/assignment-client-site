@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,12 +7,16 @@ import  './Header.css'
 import { FaUserAlt } from "react-icons/fa";
 import logo from '../../Asset/logo.png'
 import { AuthContext } from '../../Context/AuthProvider';
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 
   
 
 const Header = () => {
+  const [theme,setTheme] = useState(false)
     
+  const handleTheme = () =>{
+    setTheme(!theme)
+  }
   const {user} = useContext(AuthContext);
   console.log('context',user)
     return (
@@ -38,6 +42,14 @@ const Header = () => {
             <Link  className='text-decoration-none text-white me-3' to='/courses'>Courses</Link>
             <Link  className='text-decoration-none text-white me-3' to='/FAQ'>FAQ</Link>
             <Link  className='text-decoration-none text-white me-3' to='/blog'>Blog</Link>
+             {
+              theme?
+              <Button onClick={handleTheme} variant='light'>Light</Button>
+              :
+              <Button className='border-white'  onClick={handleTheme} variant='dark'>Dark</Button>
+             }
+            
+            
             </Nav>
         <Nav  >
             <p className='text-white'>
