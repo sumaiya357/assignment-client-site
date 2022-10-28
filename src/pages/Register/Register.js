@@ -1,19 +1,15 @@
 
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 
 const Register = () => {
-
-
-   
- 
-
-  
-
+  const [error, setError] = useState('')
+  const {createUser} = useContext(AuthContext)
   const handleRegister =(event) =>{
     event.preventDefault();
     const form =event.target;
@@ -23,7 +19,15 @@ const Register = () => {
     console.log(name,email,password)
     form.reset()
 
-  } 
+  
+   // ----- SignIn With Email Password ----
+   createUser(email,password)
+   .then(result => {
+     const user = result.user
+     console.log(user);
+   })
+ .catch(error => setError(error.message))
+} 
 
     return (
         <div  className='myForm d-flex flex-column align-items-center mt-4  '>
@@ -55,7 +59,7 @@ const Register = () => {
       <Button className='mb-2 me-3' variant="primary" type="submit">
         Register
       </Button>
-
+      <p className='text-danger'>{error}</p>
       <span>Already have a account? <Link className='text-decoration-none' to='/login'>Login</Link></span><br></br>
       
     

@@ -17,8 +17,14 @@ const Header = () => {
   const handleTheme = () =>{
     setTheme(!theme)
   }
-  const {user} = useContext(AuthContext);
+  const {user,logout} = useContext(AuthContext);
   console.log('context',user)
+
+  const handleLogout= () =>{
+    logout()
+    .then( () => {})
+    .catch( error => console.error(error))
+}
     return (
        
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -68,6 +74,8 @@ const Header = () => {
                     user?.displayName && <span>{user.displayName}</span>
                 }
             </p>
+           <button variant="light" onClick={handleLogout}>  Logout</button>
+
             <Link className='text-decoration-none text-white me-3' to='/login'>Login</Link>
             <Link className='text-decoration-none text-white' to='/register'>Register</Link>
           

@@ -6,6 +6,7 @@ import Courses from '../pages/Courses/Courses';
 import FAQ from '../pages/FAQ/FAQ';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/Login';
+import PremiumDetails from '../pages/PremiumDetails/PremiumDetails';
 import Register from '../pages/Register/Register';
 import RightNavDetails from '../pages/RightNavDetails/RightNavDetails';
 
@@ -45,11 +46,17 @@ import RightNavDetails from '../pages/RightNavDetails/RightNavDetails';
             path:'/register',
             element:<Register></Register>
         },
+        {
+            path:'/premium',
+            element:<PremiumDetails></PremiumDetails>
+        },
 
 
         {
             path:'/category/:id',
-            element:<RightNavDetails></RightNavDetails>,
+            element:<RightNavDetails>
+
+            </RightNavDetails>,
             loader:({params}) =>{
                 console.log(params)
                return fetch(`http://localhost:5000/category/${params.id}`)
