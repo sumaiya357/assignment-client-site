@@ -7,7 +7,7 @@ const Home = () => {
     console.log(alldata)
     return (
         <div>
-            <h2>Home:{alldata.length}</h2>
+            {/* <h2>Home:{alldata.length}</h2> */}
             {
                 alldata.map(data => <HomeDetails
                 key={data.id}

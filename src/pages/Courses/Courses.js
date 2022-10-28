@@ -10,7 +10,7 @@ const Courses = () => {
     return (
         <div className='d-lg-flex d-block mt-5 ms-5 '>
             <div className='border border-black col-8' >
-            <h2>Course:{alldata.length}</h2>
+            {/* <h2>Course:{alldata.length}</h2> */}
             {
                 alldata.map(data => <CourseDetails2
                 key={data._id}
